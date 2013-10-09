@@ -1,1 +1,1 @@
-![screenshot](./Pictures/screenshot.png?raw=true)
+![screenshot](bin/home/thanh/Pictures/screenshot.png?raw=true)
