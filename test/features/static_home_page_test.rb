@@ -1,4 +1,4 @@
-equire "test_helper"
+require "test_helper"
 
 class StaticHomePageTest < Capybara::Rails::TestCase
   test "sanity" do

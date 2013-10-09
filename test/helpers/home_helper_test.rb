@@ -7,3 +7,4 @@ class HomeHelperTest < ActionView::TestCase
   end
 
 end
+
