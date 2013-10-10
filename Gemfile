@@ -9,6 +9,7 @@ end
 gem 'rails', '3.2.14'
 gem 'sqlite3'
 gem 'jquery-rails'
+gem 'bootstrap'
 
 group :development, :test do
   gem "minitest-rails"
