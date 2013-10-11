@@ -17,3 +17,5 @@ class ActionDispatch::IntegrationTest
   include Capybara::RSpecMatchers
   include Capybara::DSL
 end
+
+Turn.config.format = :outline
