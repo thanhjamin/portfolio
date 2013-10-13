@@ -1,4 +1,4 @@
-<h1>Listing comments</h1>
+<h1>Thought-Provoking Thoughts</h1>
 
 <table>
   <tr>
@@ -13,13 +13,14 @@
   <tr>
     <td><%= comment.title %></td>
     <td><%= comment.body %></td>
-    <td><%= link_to 'Show', comment %></td>
-    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-    <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Read', comment, :class => 'icon-eye-open btn btn-success' %></td>
+    <td><%= link_to 'Edit', edit_comment_path(comment), :class => 'icon-edit btn btn-warning' %></td>
+    <td><%= link_to 'Delete', comment, :class => 'icon-eraser btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
+
 <br />
 
-<%= link_to 'New Comment', new_comment_path %>
+<%= link_to 'New Post', new_comment_path, :class => 'btn btn-primary' %>

@@ -1,5 +1,5 @@
 Portfolio::Application.routes.draw do
-  resources :posts
+  resources :comments
 
 
   # The priority is based upon order of creation:

@@ -13,13 +13,14 @@
 
   <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => "form-control", :placeholder => "Thanh is really cool" %>
   </div>
   <div class="field">
     <%= f.label :body %><br />
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :class => "form-control", :placeholder => "Why Thanh is your favorite person" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div>
+    <%= f.submit "Post", :class => 'btn btn-primary' %>
   </div>
 <% end %>
+
