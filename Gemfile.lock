@@ -147,6 +147,7 @@ DEPENDENCIES
   bootstrap-sass!
   coffee-rails (~> 3.2.1)
   jquery-rails
+  minitest-rails
   minitest-rails-capybara
   pg (~> 0.17.0)
   rails (= 3.2.14)
