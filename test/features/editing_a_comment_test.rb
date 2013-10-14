@@ -6,9 +6,9 @@ feature "EditingAComment" do
     click_on 'Edit'
     fill_in 'Title', with: 'a newer world'
     fill_in 'Body', with: 'Death star is dead'
-    click_on 'Update Comment'
+    click_on 'Post'
     page.text.must_include 'a newer world'
     page.text.must_include 'Death star is dead'
-    page.text.must_include 'Comment was successfully updated.'
+    page.text.must_include 'Post was successfully updated.'
   end
 end

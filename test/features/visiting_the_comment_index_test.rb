@@ -6,7 +6,7 @@ feature "Visiting the Post Index" do
     visit comments_path
 
     # When I visit /posts
-    click_on 'Show'
+    click_on 'Read'
 
     # Then the existing posts should be loaded
     page.text.must_include 'Title'

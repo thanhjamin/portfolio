@@ -14,7 +14,7 @@
 
 article,
 aside,
-details,
+details,bootstrap 2.0
 figcaption,
 figure,
 footer,
@@ -25,6 +25,13 @@ nav,
 section,
 summary {
   display: block;
+}
+
+.icon-eye-open,
+.icon-eraser,
+.icon-edit {
+  margin: 2px;
+
 }
 
 .intro {
@@ -83,6 +90,7 @@ summary {
 .navbar-right {
   padding-top: 15px;
 }
+
 
 .icon-github,
 .icon-twitter,
