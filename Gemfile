@@ -13,6 +13,7 @@ group :development, :test do
   gem "minitest-rails-capybara"
   gem 'sqlite3'
   gem "turn"
+  gem 'simplecov', :require => false
 end
 
 group :production do

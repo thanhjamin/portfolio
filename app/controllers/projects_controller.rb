@@ -14,7 +14,8 @@ class ProjectsController < ApplicationController
       flash[:notice] = "Project was successfully added."
       redirect_to @project
     else
-    # we'll get to this in a bit
+    flash[:alert] = "Project could not be saved"
+    render :new
     end
   end
 
@@ -39,6 +40,8 @@ class ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
+
+    redirect_to @project, notice: "Project was successfully deleted"
   end
 
 end
