@@ -1,6 +1,5 @@
 require "test_helper"
 
-
 feature "creating a comment" do
   scenario "works with valid data" do
     visit comments_path
@@ -22,4 +21,3 @@ visit comments_path
   page.text.must_include 'Post was successfully created.'
   end
 end
-
