@@ -7,6 +7,7 @@ gem 'rails', '3.2.14'
 gem 'jquery-rails'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 gem 'minitest-rails'
+gem 'devise'
 
 
 group :development, :test do

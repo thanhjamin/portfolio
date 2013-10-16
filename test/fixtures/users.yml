@@ -1,0 +1,6 @@
+Sign_Up:
+
+email: example@user.com
+password: <%= %>
+password_confirmation: <%= %>
+

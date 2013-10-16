@@ -27,6 +27,10 @@ summary {
   display: block;
 }
 
+.navbar-fixed-bottom > .right {
+  float: right;
+}
+
 .shadowlayer {
   width: 100%;
   height: 45%;

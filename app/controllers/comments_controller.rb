@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+before_filter :authenticate_user!, except: [:index, :show]
   # GET /comments
   # GET /comments.json
   def index
@@ -44,6 +45,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        current_user.comments << @comment
         format.html { redirect_to @comment, notice: 'Post was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else

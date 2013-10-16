@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
 
   def index
     @projects = Project.all
@@ -11,6 +12,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
     if @project.save
+      current_user.projects << @project
       flash[:notice] = "Project was successfully added."
       redirect_to @project
     else
