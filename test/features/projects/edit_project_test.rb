@@ -3,6 +3,7 @@ require "test_helper"
 feature "As the site owner, I want to edit a project so that I can correct typos" do
   scenario "editing an existing project" do
     # Given an existing project
+    sign_in_user
     visit edit_project_path(projects(:one))
 
     # When I make changes
@@ -13,9 +14,11 @@ feature "As the site owner, I want to edit a project so that I can correct typos
     page.text.must_include "success"
     page.text.must_include "Rad Portfolio"
     page.text.wont_include "Code Fellows Portfolio"
-end
+    end
+
   scenario "incorrectly editing an existing project" do
     # Given an existing project
+    sign_in_user
     visit edit_project_path(projects(:one))
 
     # When I submit invalid changes
@@ -25,7 +28,7 @@ end
     # Then the changes should not be saved, and I should get to try again
     page.text.must_include "prohibited"
     page.text.must_include "Name is too short"
-end
+    end
 end
 
 

@@ -42,14 +42,15 @@ before_filter :authenticate_user!, except: [:index, :show]
   # POST /comments.json
   def create
     @comment = Comment.new(params[:comment])
-
     respond_to do |format|
       if @comment.save
         current_user.comments << @comment
-        format.html { redirect_to @comment, notice: 'Post was successfully created.' }
+        format.html do
+        redirect_to @comment, notice: 'Post was successfully created.'
+      end
         format.json { render json: @comment, status: :created, location: @comment }
       else
-        format.html { render action: "new" }
+        format.html { render :new }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end

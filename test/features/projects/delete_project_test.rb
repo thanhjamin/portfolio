@@ -2,6 +2,7 @@ require "test_helper"
 
 feature "DeletingAProject" do
   scenario "delete existing project" do
+    sign_in_user
     visit projects_path
     click_link('Destroy', href: "/projects/#{projects(:two).id}")
     page.text.must_include "Project was successfully deleted"
