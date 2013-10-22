@@ -19,4 +19,10 @@ visit new_comment_path
     page.has_css? "#author"
     page.text.must_include users(:one).email
   end
+
+  scenario "authors can't publish" do
+  sign_in_user
+  visit new_comment_path
+  page.wont_have_field('Publish')
+  end
 end

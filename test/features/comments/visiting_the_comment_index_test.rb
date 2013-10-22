@@ -1,9 +1,8 @@
 require "test_helper"
 
-feature "Visiting the Post Index" do
-  scenario "with existing posts" do
+feature "vistor visiting the post index" do
+  scenario "vistor visits existing posts" do
     # Given existing posts
-    sign_in_user
     visit comments_path
 
     # When I visit /posts

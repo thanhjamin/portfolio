@@ -3,7 +3,7 @@ before_filter :authenticate_user!, except: [:index, :show]
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = policy_scope(Comment)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,6 +42,7 @@ before_filter :authenticate_user!, except: [:index, :show]
   # POST /comments.json
   def create
     @comment = Comment.new(params[:comment])
+    authorize @comment
     respond_to do |format|
       if @comment.save
         current_user.comments << @comment
@@ -60,7 +61,7 @@ before_filter :authenticate_user!, except: [:index, :show]
   # PUT /comments/1.json
   def update
     @comment = Comment.find(params[:id])
-
+    authorize @comment
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
         format.html { redirect_to @comment, notice: 'Post was successfully updated.' }
@@ -76,8 +77,8 @@ before_filter :authenticate_user!, except: [:index, :show]
   # DELETE /comments/1.json
   def destroy
     @comment = Comment.find(params[:id])
+    authorize @comment
     @comment.destroy
-
     respond_to do |format|
       format.html { redirect_to comments_url }
       format.json { head :no_content }

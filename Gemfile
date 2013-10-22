@@ -9,6 +9,7 @@ gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 gem 'minitest-rails'
 gem 'devise'
 gem 'pundit'
+gem 'omniauth-twitter'
 
 
 group :development, :test do
@@ -17,6 +18,7 @@ group :development, :test do
   gem "turn"
   gem 'simplecov', :require => false
   gem 'launchy'
+  gem 'pry-rails'
 end
 
 group :production do

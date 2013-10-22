@@ -1,7 +1,7 @@
 require "test_helper"
 
-feature "EditingAComment" do
-  scenario "update existing comment" do
+feature "Editor Editing Comment" do
+  scenario "Editor update comment" do
     sign_in_user
     visit comment_path(comments(:one))
     click_on 'Edit'

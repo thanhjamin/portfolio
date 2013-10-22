@@ -27,6 +27,33 @@ summary {
   display: block;
 }
 
+
+/*
+Flash Alert Banner
+
+.alert.alert-info {
+  position: absolute;
+  z-index: 3;
+}
+*/
+
+label {
+  margin-top: 5px
+}
+
+.control-label {
+  margin-top: 5px;
+}
+
+.well.col-lg-6 > h2 {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+
+.well.col-lg-6 {
+  margin-top: 40px;
+}
+
 .navbar-fixed-bottom > .right {
   float: right;
 }
@@ -49,7 +76,7 @@ summary {
   top: 40%;
 }
 
-
+.icon-printer,
 .icon-eye-open,
 .icon-eraser,
 .icon-edit {
@@ -76,7 +103,7 @@ summary {
 .content > header > h1 {
   font-family: "Roboto Slab", serif;
   font-size: 100px;
-  line-height: 570px;
+  line-height: 585px;
   color: white;
   text-shadow: 0px 1px black;
   font-weight: 300;
@@ -576,8 +603,8 @@ h6 small,
 h1,
 h2,
 h3 {
-  margin-top: 21px;
-  margin-bottom: 10.5px;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
 h4,

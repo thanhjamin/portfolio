@@ -4,4 +4,8 @@ one:
   author: one
   published: true
 
-
+two:
+  title: Rails Code
+  body: Doing by Learn
+  author: one
+  published: false

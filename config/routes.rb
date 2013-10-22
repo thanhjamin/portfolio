@@ -6,6 +6,8 @@ Portfolio::Application.routes.draw do
 
   root to: 'home#index'
 
+  match 'unmatched_route', to: "application#raise_not_found!"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
