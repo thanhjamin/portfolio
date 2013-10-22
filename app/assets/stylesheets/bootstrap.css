@@ -50,6 +50,10 @@ label {
   margin-bottom: 10px;
 }
 
+.move-up > .well.col-lg-6 {
+  margin-top: 20px;
+}
+
 .well.col-lg-6 {
   margin-top: 40px;
 }
@@ -61,7 +65,6 @@ label {
 .navbar-fixed-bottom > .left {
   float: left;
 }
-
 
 .shadowlayer {
   width: 100%;

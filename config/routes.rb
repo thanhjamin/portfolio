@@ -1,7 +1,10 @@
 Portfolio::Application.routes.draw do
   devise_for :users
 
-  resources :comments
+  resources :comments do
+    resources :remarks
+  end
+
   resources :projects
 
   root to: 'home#index'

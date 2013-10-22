@@ -14,7 +14,13 @@
   <%= @comment.author.email %>
 </p>
 
+<div class="move-up">
+<div class="well col-lg-6">
+<%= render 'remarks/form' %>
+
+</br>
 
 <%= link_to 'Edit', edit_comment_path(@comment), :class => 'btn btn-warning' %>
-
 <%= link_to 'Back', comments_path, :class => 'btn btn-success' %>
+</div>
+</div>

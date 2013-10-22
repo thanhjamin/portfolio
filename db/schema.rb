@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131020041758) do
+ActiveRecord::Schema.define(:version => 20131022202411) do
 
   create_table "comments", :force => true do |t|
     t.string   "title"
@@ -28,6 +28,22 @@ ActiveRecord::Schema.define(:version => 20131020041758) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
+
+  create_table "remarks", :force => true do |t|
+    t.string   "author"
+    t.string   "author_url"
+    t.string   "author_email"
+    t.string   "user_ip"
+    t.string   "user_agent"
+    t.string   "referrer"
+    t.text     "content"
+    t.boolean  "approved"
+    t.integer  "comment_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "remarks", ["comment_id"], :name => "index_remarks_on_comment_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
