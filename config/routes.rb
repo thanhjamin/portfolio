@@ -1,5 +1,6 @@
 Portfolio::Application.routes.draw do
-  devise_for :users
+  devise_for :users,
+              controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   resources :comments do
     resources :remarks
@@ -8,6 +9,8 @@ Portfolio::Application.routes.draw do
   resources :projects
 
   root to: 'home#index'
+
+  match 'about', to: 'about#index'
 
   match 'unmatched_route', to: "application#raise_not_found!"
 
@@ -32,7 +35,7 @@ Portfolio::Application.routes.draw do
   #       get 'short'
   #       post 'toggle'
   #     end
-  #
+  # =>
   #     collection do
   #       get 'sold'
   #     end

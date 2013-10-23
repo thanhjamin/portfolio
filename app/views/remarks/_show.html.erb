@@ -1,0 +1,20 @@
+<h2>Comments</h2>
+<% @remarks.each do |remark| %>
+  <p>
+    <b>By:</b>
+    <%= remark.author %>
+  </p>
+  <p>
+    <b>Comment:</b>
+    <%= remark.content %>
+  </p>
+
+<% if remark.approved? == false && policy(remark).approved? %>
+<td><%= link_to 'Approve', comment_remark_path(@comment, remark, comment: {approved: true}), :class => 'icon-check btn btn-default', method: :put, data: { confirm: 'Are you sure you want to approve this comment?' }%></td>
+<% end %>
+
+<% if policy(remark).destroy? %>
+<td><%= link_to 'Delete', [@comment, remark], :class => 'icon-eraser btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>
+<% end %>
+

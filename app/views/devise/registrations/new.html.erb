@@ -5,6 +5,7 @@
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true, :class => "form-control" %></div>
 
+  <% if f.object.password_required? %>
   <div><%= f.label :password %><br />
   <%= f.password_field :password, :class => "form-control" %></div>
 
@@ -17,3 +18,4 @@
 </br>
 <%= render "devise/shared/links" %>
 </div>
+<% end %>

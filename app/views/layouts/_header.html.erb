@@ -10,8 +10,8 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav">
-            <li>
-              <a href="#">About</a>
+            <li class="<%= 'active' if current_page?(about_path) %>">
+              <%= link_to 'About', about_path %>
             </li>
             <li class="<%= 'active' if current_page?(projects_path) %>">
               <%= link_to "Portfolio", projects_path %>

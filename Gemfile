@@ -10,6 +10,8 @@ gem 'minitest-rails'
 gem 'devise'
 gem 'pundit'
 gem 'omniauth-twitter'
+gem 'figaro'
+gem 'font-awesome-rails'
 
 
 group :development, :test do
