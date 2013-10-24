@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131023173702) do
+ActiveRecord::Schema.define(:version => 20131024001016) do
 
   create_table "comments", :force => true do |t|
     t.string   "title"
@@ -38,13 +38,12 @@ ActiveRecord::Schema.define(:version => 20131023173702) do
     t.string   "referrer"
     t.text     "content"
     t.boolean  "approved"
-    t.integer  "comment_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "name"
+    t.integer  "remarkable_id"
+    t.string   "remarkable_type"
   end
-
-  add_index "remarks", ["comment_id"], :name => "index_remarks_on_comment_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

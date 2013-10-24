@@ -1,11 +1,11 @@
 class RemarksController < ApplicationController
-  def create
-    @remark = Remark.new(params[:remark])
-    @comment = @remark.comment
+  before_filter: load_remarkable
 
+  def create
+    @remark = remarkable.remarks.new(params[:remark])
     respond_to do |format|
       if @remark.save
-        format.html { redirect_to @comment, notice: 'Comment has been submitted for approval.' }
+        format.html { redirect_to @remarkable, notice: 'Comment has been submitted for approval.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
         format.html { render template: "comments/show" }
@@ -42,9 +42,9 @@ class RemarksController < ApplicationController
 
   private
 
-  def load_comment_remark
-    @remark = Remark.find(params[:id])
-    @comment = @remark.comment
+  def remarkable
+    resource, id = request.path.split('/')[1, 2]
+    @remarkable = resource.singularize.classify.constantize.find(id)
   end
 end
 

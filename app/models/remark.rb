@@ -1,5 +1,5 @@
 class Remark < ActiveRecord::Base
-  belongs_to :comment
+  belongs_to :remarkable, polymorphic: true
   attr_accessible :approved,
                   :author,
                   :author_email,
@@ -8,5 +8,10 @@ class Remark < ActiveRecord::Base
                   :referrer,
                   :user_agent,
                   :user_ip,
-                  :comment_id
+                  :comment_id,
+                  :remarkable,
+                  :remarkable_id,
+                  :remark
+
+
 end

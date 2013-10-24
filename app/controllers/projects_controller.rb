@@ -23,6 +23,9 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @remarkable = @project
+    @remarks = policy_scope(@project.remarks)
+    @remark = Remark.new
   end
 
   def edit

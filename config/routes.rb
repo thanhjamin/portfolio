@@ -6,10 +6,11 @@ Portfolio::Application.routes.draw do
     resources :remarks
   end
 
-  resources :projects
+  resources :projects do
+    resources :remarks
+  end
 
   root to: 'home#index'
-
   match 'about', to: 'about#index'
 
   match 'unmatched_route', to: "application#raise_not_found!"

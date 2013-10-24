@@ -15,8 +15,10 @@ before_filter :authenticate_user!, except: [:index, :show]
   # GET /comments/1.json
   def show
     @comment = Comment.find(params[:id])
+    @remarkable = @comment
+    @remarks = @remarkable.remarks
     @remark = Remark.new
-    @remarks = @comment.remarks
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @comment }
