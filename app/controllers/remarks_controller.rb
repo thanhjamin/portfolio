@@ -1,21 +1,20 @@
 class RemarksController < ApplicationController
-  before_filter: load_remarkable
+  before_filter :load_remarkable
 
   def create
-    @remark = remarkable.remarks.new(params[:remark])
-    respond_to do |format|
+    @remark = @remarkable.remarks.new(params[:remark])
+
       if @remark.save
-        format.html { redirect_to @remarkable, notice: 'Comment has been submitted for approval.' }
-        format.json { render json: @comment, status: :created, location: @comment }
+        redirect_to @remarkable, notice: 'Comment has been submitted for approval.'
       else
-        format.html { render template: "comments/show" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+       @remarks = policy_scope(@remarkable.remarks)
+       instance_variable_set("@#{@resource.singularize}".to_sym, @remarkable)
+       render template: "#{@resource}/show"
     end
   end
 
   def update
-    load_comment_remark
+    @remark = Remark.find(params[:id])
     authorize @remark
 
     respond_to do |format|
@@ -42,9 +41,9 @@ class RemarksController < ApplicationController
 
   private
 
-  def remarkable
-    resource, id = request.path.split('/')[1, 2]
-    @remarkable = resource.singularize.classify.constantize.find(id)
+  def load_remarkable
+    @resource, id = request.path.split('/')[1, 2]
+    @remarkable = @resource.singularize.classify.constantize.find(id)
   end
 end
 

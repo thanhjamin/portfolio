@@ -1,2 +1,21 @@
-<h2><%= @project.name %></h2>
-<p>Technologies used: <%= @project.technologies_used %>
+</br>
+<p>
+  <b>Project:</b>
+  <%= @project.name %>
+</p>
+
+<p>
+  <b>Technologies used:</b>
+  <%= @project.technologies_used %>
+</p>
+
+<div class="move-up">
+  <div class="well col-lg-6">
+    <%= render 'remarks/form' %>
+    <%= link_to 'Edit', edit_project_path(@project), :class => 'icon-edit btn btn-warning' %>
+    <%= link_to 'Back', projects_path, :class => 'btn btn-success' %>
+  </br>
+  <%= render 'remarks/show' %>
+</div>
+</div>
+
