@@ -8,7 +8,7 @@ feature "As the site owner, I want to edit a project so that I can correct typos
 
     # When I make changes
     fill_in "Name", with: "My Rad Portfolio"
-    click_on "Update Project"
+    click_on "Post"
 
     # Then the changes should be saved and shown
     page.text.must_include "success"
@@ -23,7 +23,7 @@ feature "As the site owner, I want to edit a project so that I can correct typos
 
     # When I submit invalid changes
     fill_in "Name", with: "Err"
-    click_on "Update Project"
+    click_on "Post"
 
     # Then the changes should not be saved, and I should get to try again
     page.text.must_include "prohibited"

@@ -7,7 +7,7 @@ feature "As the site owner, I want to add a portfolio item so that I can show of
     click_on "New project"
     fill_in "Name", with: "Code Fellows Portfolio"
     fill_in "Technologies used", with: "Rails, Ruby, Bootstrap, HTML5, CSS3"
-    click_on "Create Project"
+    click_on "Post"
     page.text.must_include "Project was successfully added"
     page.text.must_include "Code Fellows Portfolio"
     page.text.must_include "Rails"
@@ -20,7 +20,7 @@ feature "As the site owner, I want to add a portfolio item so that I can show of
     fill_in "Name", with: "Q"
 
     # When the form is submitted with a short name and missing technologies_used field
-    click_on "Create Project"
+    click_on "Post"
 
     # Then the form should be displayed again, with an error message
     current_path.must_match /projects$/
