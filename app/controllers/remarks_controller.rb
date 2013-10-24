@@ -19,22 +19,22 @@ class RemarksController < ApplicationController
 
     respond_to do |format|
       if @remark.update_attributes(params[:remark])
-        format.html { redirect_to @comment, notice: 'Comment has been approved.' }
+        format.html { redirect_to @remarkable, notice: 'Comment has been approved.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.json { render json: @remarkable.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    load_comment_remark
+    @remark = Remark.find(params[:id])
     authorize @remark
     @remark.destroy
 
     respond_to do |format|
-      format.html { redirect_to @comment, notice: 'Comment was deleted.' }
+      format.html { redirect_to @remarkable, notice: 'Comment was deleted.' }
       format.json { head :no_content }
     end
   end
