@@ -1,19 +1,12 @@
 </br>
-<h1>Thought-Provoking Thoughts</h1>
+<h1 class="hgroup">Thought-Provoking Thoughts</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div class="col-lg-8">
 <% @comments.each do |comment| %>
-  <tr id='<%= dom_id(comment) %>'>
-    <td><%= comment.title %></td>
-    <td><%= comment.body %></td>
+  <div id='<%= dom_id(comment) %>'>
+    <h2 class="btitle"><%= comment.title %></h2>
+    <p><%= comment.body %></p>
+  </br>
     <td><%= link_to 'Read', comment, :class => 'icon-eye-open btn btn-success' %></td>
     <% if policy(comment).update? %>
     <td><%= link_to 'Edit', edit_comment_path(comment), :class => 'icon-edit btn btn-warning' %></td>
@@ -27,11 +20,13 @@
     <% if policy(comment).destroy? %>
     <td><%= link_to 'Delete', comment, :class => 'icon-eraser btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
-  </tr>
+  </div>
 <% end %>
-</table>
-
-
 <br />
-
 <%= link_to 'New Post', new_comment_path, :class => 'btn btn-primary' %>
+</div>
+
+
+
+
+

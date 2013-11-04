@@ -27,6 +27,13 @@ summary {
   display: block;
 }
 
+.btitle {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.hgroup {
+  text-align: center;
+}
 
 /*
 Flash Alert Banner
@@ -84,7 +91,6 @@ label {
 .icon-eraser,
 .icon-edit {
   margin: 2px;
-
 }
 
 .intro {
@@ -404,7 +410,7 @@ table {
     border-collapse: collapse !important;
   }
   .table-bordered th,
-  .table-bordered td {
+      .table-bordered td {
     border: 1px solid #ddd !important;
   }
 }
