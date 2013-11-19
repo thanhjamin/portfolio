@@ -8,6 +8,7 @@ require "capybara/rspec/matchers"
 require "minitest/rails/capybara"
 require "capybara/webkit"
 
+Capybara.javascript_driver = :webkit
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
