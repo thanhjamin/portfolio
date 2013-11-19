@@ -6,6 +6,7 @@ require "rails/test_help"
 require "minitest/rails"
 require "capybara/rspec/matchers"
 require "minitest/rails/capybara"
+require "capybara/webkit"
 
 
 class ActiveSupport::TestCase
@@ -20,7 +21,7 @@ class ActionDispatch::IntegrationTest
   include Capybara::DSL
 end
 
-def sign_in_user
+  def sign_in_user
     @user = users(:one)
     visit new_user_session_path
     fill_in "Email", with: users(:one).email

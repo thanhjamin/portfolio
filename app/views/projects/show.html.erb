@@ -9,6 +9,10 @@
   <%= @project.technologies_used %>
 </p>
 
+<p>
+<%= image_tag @project.image_url(:thumb).to_s %>
+</p>
+
 <div class="move-up">
   <div class="well col-lg-6">
     <%= render 'remarks/form' %>

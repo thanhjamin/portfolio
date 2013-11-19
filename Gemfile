@@ -12,6 +12,13 @@ gem 'pundit'
 gem 'omniauth-twitter'
 gem 'figaro'
 gem 'font-awesome-rails'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'fog'
+gem 'unf'
+gem 'carrierwave_direct'
+gem 'sidekiq'
+gem 'redis'
 
 
 group :development, :test do
@@ -27,6 +34,3 @@ group :production do
   gem "pg", "~> 0.17.0"
   gem 'rails_12factor'
 end
-
-
-

@@ -47,6 +47,16 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+    carrierwave_direct (0.0.13)
+      carrierwave
+      fog
+      uuidtools
+    celluloid (0.15.2)
+      timers (~> 1.1.0)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -55,6 +65,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    connection_pool (1.1.0)
     devise (3.1.1)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -62,12 +73,24 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
+    excon (0.28.0)
     execjs (2.0.2)
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    fog (1.18.0)
+      builder
+      excon (~> 0.28.0)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5)
+      ruby-hmac
     font-awesome-rails (3.2.1.3)
       railties (>= 3.2, < 5.0)
+    formatador (0.2.4)
     hashie (2.0.5)
     hike (1.2.3)
     i18n (0.6.5)
@@ -100,6 +123,9 @@ GEM
       minitest-metadata (~> 0.4)
       minitest-rails (~> 0.9.1)
     multi_json (1.8.1)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     oauth (0.4.7)
@@ -153,11 +179,22 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    redis (3.0.6)
+    redis-namespace (1.3.2)
+      redis (~> 3.0.4)
+    rmagick (2.13.2)
+    ruby-hmac (0.4.0)
     sass (3.2.12)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    sidekiq (2.16.1)
+      celluloid (>= 0.15.2)
+      connection_pool (>= 1.0.0)
+      json
+      redis (>= 3.0.4)
+      redis-namespace (>= 1.3.1)
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
@@ -173,6 +210,7 @@ GEM
     thread_safe (0.1.3)
       atomic
     tilt (1.4.1)
+    timers (1.1.0)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -182,6 +220,10 @@ GEM
     uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    unf (0.1.3)
+      unf_ext
+    unf_ext (0.0.6)
+    uuidtools (2.1.4)
     warden (1.2.3)
       rack (>= 1.0)
     xpath (2.0.0)
@@ -192,9 +234,12 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass!
+  carrierwave
+  carrierwave_direct
   coffee-rails (~> 3.2.1)
   devise
   figaro
+  fog
   font-awesome-rails
   jquery-rails
   launchy
@@ -206,8 +251,12 @@ DEPENDENCIES
   pundit
   rails (= 3.2.14)
   rails_12factor
+  redis
+  rmagick
   sass-rails (~> 3.2.3)
+  sidekiq
   simplecov
   sqlite3
   turn
   uglifier (>= 1.0.3)
+  unf

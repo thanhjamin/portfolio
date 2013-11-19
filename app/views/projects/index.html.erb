@@ -3,6 +3,7 @@
 <div class="project" id="<%= dom_id(project) %>">
   <h3><%= project.name %></h3>
   <p><%= project.technologies_used %></p>
+  <%= image_tag project.image_url(:thumb).to_s %>
   <div class="nav">
     <%= link_to 'Show', project %> |
     <%= link_to 'Edit', edit_project_path(project) %> |
@@ -12,4 +13,8 @@
 <% end %>
 
 <br />
-<%= link_to 'New project', new_project_path %>
+
+<%= direct_upload_form_for @uploader do |f| %>
+  <p><%= f.file_field :image %></p>
+  <p><%= f.submit "Upload Image" %></p>
+<% end %>
