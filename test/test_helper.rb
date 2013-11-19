@@ -6,6 +6,9 @@ require "rails/test_help"
 require "minitest/rails"
 require "capybara/rspec/matchers"
 require "minitest/rails/capybara"
+require "capybara/webkit"
+
+Capybara.javascript_driver = :webkit
 
 
 class ActiveSupport::TestCase
