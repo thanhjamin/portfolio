@@ -12,6 +12,7 @@ gem 'pundit'
 gem 'omniauth-twitter'
 gem 'figaro'
 gem 'font-awesome-rails'
+gem 'simple_form'
 
 
 group :development, :test do
