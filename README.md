@@ -1,1 +1,1 @@
-![screenshot](/public/screenshot.png?raw=true)
+![screenshot](/public/portfolio.png?raw=true)
